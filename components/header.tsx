@@ -12,12 +12,7 @@ export default function Header (){
     }
 
     return (
-        <header style={
-            {
-                backgroundColor : "#FF7A00",
-                color: "white",
-            }
-        } className=" w-full text-lg flex flex-row justify-between content-center">
+        <header className=" bg-primary text-background w-full text-lg flex flex-row justify-between content-center">
             <div className="logo w-2/5 p-6 flex flex-row content-center justify-center text-white bg-black rounded-r-full">
                 <h1>Logo</h1>
             </div>

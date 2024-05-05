@@ -6,7 +6,7 @@ export default function Page() {
     return (
         <div className="w-screen flex gap-16 flex-col content-center">
             <Header />
-            <main className="w-[80%] mt-6 self-center">
+            <main className="w-[76%]  self-center">
                 <Hero />
             </main>
         </div>
