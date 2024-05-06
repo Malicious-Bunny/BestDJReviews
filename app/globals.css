@@ -59,3 +59,14 @@
       @apply bg-background text-foreground;
     }
   }
+
+  .blogitem:hover{
+    .line{
+      width: 100%;
+      background-color: #FF7A00;
+    }
+    .line2{
+      width: 30%;
+      background-color: #FF7A00;
+    }
+  }

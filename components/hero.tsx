@@ -8,7 +8,7 @@ export default function Hero (){
 
 
     return (
-        <section className="w-full h-[35vw] flex gap-8 flex-row content-center">
+        <section className="w-full h-[60vh]  flex gap-8 flex-row">
             <Image className=" rounded-md" src="/djhero.jpg" alt="hero" width={800} height={800} />
             <HeroInfo />
         </section>
@@ -17,7 +17,7 @@ export default function Hero (){
 
 function HeroInfo(){
     return (
-        <div className="flex w-full flex-col gap-6 justify-center content-center">
+        <div className="flex w-full h-full p-2 flex-col gap-8 justify-center content-center">
             <div className="flex flex-row font-extrabold gap-4 self-start justify-center content-center" >
                 <div className="date">
                     <p className="text-xl text-gray-400">April 24,2024</p>
@@ -33,7 +33,7 @@ function HeroInfo(){
                     <p className="text-xl text-gray-400">News</p>
                 </div>
             </div>
-            <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl">
+            <h1 className="scroll-m-20 text-6xl font-bold tracking-tight lg:text-5xl">
                     DJ tools becoming extremely pricy and heres why
             </h1>
             <p className="leading-7 font-thin text-muted-foreground [&:not(:first-child)]:mt-1">
