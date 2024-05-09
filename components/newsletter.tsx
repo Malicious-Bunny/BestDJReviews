@@ -9,7 +9,7 @@ export default function Newsletter(){
             {
                 border: "1px solid #FF7A00",
             }
-        } className="w-full bg-[#FFF5EF] border-8 h-[40vh] flex-col  flex justify-center content-center">
+        } className="w-full mt-auto bg-[#FFF5EF] border-8 h-[40vh] flex-col  flex justify-center content-center">
         <div className=" flex flex-col gap-8 self-center justify-center content-center">
             <div className=" flex gap-2 justify-center content-center flex-col">
                 <h1 className="scroll-m-20 text-3xl  tracking-tight lg:text-5xl">
