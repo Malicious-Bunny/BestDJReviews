@@ -4,9 +4,9 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa"
 
 export default function Footer(){
     return (
-        <footer className="w-full mt-auto flex flex-row content-center justify-center bg-[#0F172A] h-[5vh]">
+        <footer className="w-full xl:p-0 p-3 mt-auto flex xl:flex-row flex-col content-center justify-center bg-[#0F172A] xl:h-[5vh]">
 
-            <div className=" flex flex-row self-center w-2/4 justify-between content-center">
+            <div className=" flex xl:gap-0 gap-4 xl:flex-row flex-col self-center xl:w-2/4 justify-between content-center">
                 <div className="flex flex-row gap-1">
                     <p className="text-white">©2024 DJ News</p>
                     <p className="text-white">|</p>

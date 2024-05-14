@@ -60,7 +60,7 @@ export default function Header (){
             </div>
             <div onClick={
                 ()=>{return setMenuOpen(!menuOpen)}
-            } className=" cursor-pointer self-center mr-3 md:hidden ">
+            } className=" cursor-pointer self-center mr-3 xl:hidden ">
                 <div className="round hover:cursor-pointer gap-2 p-4 rounded-2xl bg-black flex flex-row content-center justify-center">
                    <span className="self-center">Link</span>
                     <FaBars  style={
