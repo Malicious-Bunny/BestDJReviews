@@ -34,7 +34,7 @@ function HeroInfo(){
                 </div>
             </div>
             <h1 className="scroll-m-2 xl:text-6xl text-4xl font-bold tracking-tight lg:text-5xl">
-                    DJ tools becoming extremely pricy and heres why
+                    DJ tools becoming extremely pricy and heres why 
             </h1>
             <p className="leading-7 font-thin text-muted-foreground [&:not(:first-child)]:mt-1">
                 DJ tools are becoming more and more expensive as the years go by. This is due to the fact that the demand for DJ tools is increasing. DJ tools are becoming more and more popular as the years go by. This is due to the fact that the demand for DJ tools is increasing. DJ tools are becoming more and more popular as the years go by. This is due to the fact that the demand for DJ tools is increasing. DJ tools are becoming more and more popular as the years go by. This is due to the fact that the demand for DJ tools is increasing.
