@@ -1,33 +1,26 @@
 import { FaCircle } from "react-icons/fa";
 import { Badge } from "./ui/badge";
 import Image from "next/image";
-
-interface blogitemprops {
-    title : string;
-    date : string;
-    category : string;
-    tags : string[];
-}
+import { format } from "date-fns"
+import Link from "next/link";
 
 
-export default function BlogItem({title,date,category,tags}:blogitemprops){
 
-
-    function getrandombetween1and4(){
-        return Math.floor(Math.random() * 4) + 1;
-    
-    }
+export default function BlogItem({title,date,image, desc, ImgDes,category,link, mainCat}:any){
     return (
-        <div className=" rounded-sm blogitem cursor-pointer p-2  flex flex-col gap-4">
-            <Image className=" rounded-md" alt="placeholder" src={`/placeholder${getrandombetween1and4()}.jpg`} width={550} height={550} />
+        <Link href={`/posts/${link}`} className=" rounded-sm blogitem cursor-pointer p-2  flex flex-col gap-4">
+        
+                <Image className=" rounded-md" alt={ImgDes} src={image} width={550} height={550} />
+
+
             <h3 className="text-2xl text-black font-bold">{title}</h3>
-            <p className="text-gray-600 font-thin">DJ tools are becoming more and more expensive due to short blaj </p>
+            <p className="text-gray-600 font-thin">{desc}</p>
             {/*horizontal line that scales from 20% to 100% and changes colo when the blogitem is hovered*/}
             <div className="w-20 line bg-gray-300 h-1 transition-all duration-300  transform  hover:bg-[#FF7A00]"></div>
 
             <div className="flex flex-row w-[45%] justify-between">
                 <div className="date">
-                        <p className="text-xl text-gray-400">{date}</p>
+                        <p className="text-md self-center text-gray-400">{format(date,'MMMM dd, yyyy')}</p>
                     </div>
                     <div className="bullet self-center">
                         <FaCircle  style={
@@ -37,7 +30,7 @@ export default function BlogItem({title,date,category,tags}:blogitemprops){
                         } />
                     </div>
                     <div className="category">
-                        <p className="text-xl text-gray-400">{category}</p>
+                        <p className="text-md self-center text-gray-400">{mainCat}</p>
                     </div>
             </div>
             <div style={
@@ -46,7 +39,7 @@ export default function BlogItem({title,date,category,tags}:blogitemprops){
                     scrollbarWidth: "none",
                 }
             } className="flex w-full overflow-x-scroll flex-row gap-4">
-                {tags.map((tag,index) => {
+                {category.map((category: string, index: number) => {
                     return (
                         <Badge key={index} style={
                             {
@@ -54,13 +47,13 @@ export default function BlogItem({title,date,category,tags}:blogitemprops){
                                 borderColor : "#FF7A00"
                                 
                             }
-                        } variant={'outline'} className="hover:text-black border-2 cursor-pointer">{tag}</Badge>
+                        } variant={'outline'} className="hover:text-black border-2 cursor-pointer">{category}</Badge>
                     )
                 })}
             </div>
             <div className="line2 w-0 bg-gray-300 h-1 transition-all duration-300  transform  hover:bg-[#FF7A00]"></div>
 
          
-        </div>
+        </Link>
     )
 }

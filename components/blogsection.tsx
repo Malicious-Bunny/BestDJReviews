@@ -1,7 +1,7 @@
 import BlogItem from "./blogitem"
 
 
-export default function Blogsection(){
+export default function Blogsection({BlogsItems}:any){
     
     return (
         <section
@@ -12,18 +12,12 @@ export default function Blogsection(){
                 gap: "2rem",
             }
         }
-
+        
         className=" grid w-full">
-           {/*generate different blog items with different titles, dates, categories and tags*/}
-            <BlogItem title="DJ tools becoming extremely pricy and heres why" date="April 24,2024" category="News" tags={["Music","DJ"]} />
-            <BlogItem title="The best DJ tools in the market" date="April 24,2024" category="News" tags={["Music","DJ"]} />
-            <BlogItem title="The best DJ tools in the market" date="April 24,2024" category="News" tags={["Music","DJ"]} />
-            <BlogItem title="The best DJ tools in the market" date="April 24,2024" category="News" tags={["Music","DJ"]} />
-            <BlogItem title="The best DJ tools in the market" date="April 24,2024" category="News" tags={["Music","DJ"]} />
-            <BlogItem title="The best DJ tools in the market" date="April 24,2024" category="News" tags={["Music","DJ"]} />
-            <BlogItem title="The best DJ tools in the market" date="April 24,2024" category="News" tags={["Music","DJ"]} />
-            <BlogItem title="The best DJ tools in the market" date="April 24,2024" category="News" tags={["Music","DJ"]} />
-            <BlogItem title="The best DJ tools in the market" date="April 24,2024" category="News" tags={["Music","DJ"]} />
-        </section>
+           {
+                BlogsItems.map((item: any) => (
+                     <BlogItem key={item.sys.id} title={item.fields.title} date={item.fields.date} image={`https:${item.fields.image.fields.file.url}`} desc={item.fields.description} ImgDes={item.fields.image.fields.description} category={item.fields.category} link={item.sys.id} mainCat={item.fields.mainCategory} />
+                ))
+           } </section>
     )
 }

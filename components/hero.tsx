@@ -4,6 +4,8 @@ import Image from "next/image"
 import { FaCircle } from "react-icons/fa"
 import { Badge } from "./ui/badge"
 import Link from "next/link"
+//date format from date-fns
+import { format } from "date-fns"
 
 export default async function Hero ({title, date, description, image, tags, link, ImgDes}:any){
 
@@ -21,7 +23,7 @@ function HeroInfo({Dates, Title, Description, Tags, Links}:any){
         <div className="flex w-full xl:h-full p-2 flex-col xl:gap-8 gap-8 justify-center content-center">
             <div className="flex flex-row font-extrabold xl:gap-4 gap-2 self-start justify-center content-center" >
                 <div className="date">
-                    <p className="xl:text-xl text-lg text-gray-400">{Dates}</p>
+                    <p className="xl:text-xl text-lg text-gray-400">{format(Dates,'MMMM dd, yyyy')}</p>
                 </div>
                 <div className="bullet self-center">
                     <FaCircle  style={
