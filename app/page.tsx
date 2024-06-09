@@ -1,38 +1,36 @@
-'use client'
-
 import Hero from "@/components/hero";
 import Blogsection from "@/components/blogsection";
 import client from "@/lib/client";
 import { useEffect } from "react";
+import { env } from "process";
 
-async function getData(){
 
-    const MainUrl = 'https://cdn.contentful.com/spaces/yqf5x6omucvn/environments/master/entries/AnK2qvSnHRIROQdUTDE4m?access_token=u5YLhoRiw6rnI_Qt0FMsHLfIcTnpxBQAD3yPSN9M72s'
+ export default async function Page() {
+ 
+   
+    //now use the fetch api and nextjs caching to fetch the data
 
-    const res = await fetch(MainUrl)
-    const data = await res.json()
+    const res = await fetch(`https://cdn.contentful.com/spaces/yqf5x6omucvn/environments/master/entries?access_token=${env.CONTENTFUL_ACCESS_TOKEN}&content_type=post`,{ next: { revalidate: 3600 } })
 
-    return data
+    const Data = await res.json()
 
-}
-export default function Page() {
-    //fetching posts with the contentful client
+    const resImg = await client.getAsset(Data.items[0].fields.image.sys.id)
+    //now get image permalink from image id
+
+    const imgUrl = 'https:'+resImg.fields.file?.url;
+    const ImgDes = resImg.fields.description;
+
+
+
     
-   useEffect(() => {
-    getData()
-    .then(data => {
-        console.log(data)
-    })
-    .catch(err => {
-        console.log(err)
-    })
-   }, [])
+    
+   
    
     return (
         <div className="w-screen flex flex-col content-center">
             
             <main className="xl:w-[76%] p-4 w-full xl:my-12 flex-col flex gap-16  self-center">
-                <Hero />
+               { <Hero title={Data.items[0].fields.title} date={Data.items[0].fields.date} description={Data.items[0].fields.description} image={imgUrl} tags={Data.items[0].fields.category} link={Data.items[0].fields.id} ImgDes={ImgDes}/> }
                 <Blogsection />
             </main>
         </div>
