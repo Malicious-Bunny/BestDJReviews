@@ -17,17 +17,7 @@ import client from "@/lib/client";
        
             const imgUrl = 'https:' + (Data.items[0].fields.image?.fields?.file?.url || '');
             const ImgDes = (Data.items[0].fields.image?.fields?.description || '');
-       
-           
-     
-        
-        console.log(Data.items[0].fields)
 
-
-
-    
-    
-   
    
     return (
         <div className="w-screen flex flex-col content-center">
