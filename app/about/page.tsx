@@ -4,7 +4,18 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 //import insta, facebook, twitter icons from react-icons
 import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "About Us - BestDJReviews",
+  description: "Learn more about My DJ Blog, our journey, and our passion for the DJ world. Discover the people behind the blog and our mission to bring you the latest in DJ news and reviews.",
+  keywords: "About My DJ Blog, DJ blog team, DJ news, DJ reviews, our mission, DJ world",
+  openGraph: {
+    title: "About Us - BestDJReviews",
+    description: "Learn more about My DJ Blog, our journey, and our passion for the DJ world. Discover the people behind the blog and our mission to bring you the latest in DJ news and reviews.",
+    type: "website",
+  },
+}
 export default function Page() {
   return (
     <div className="w-screen p-4   flex flex-col content-center">

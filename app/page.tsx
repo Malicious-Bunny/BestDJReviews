@@ -1,8 +1,20 @@
 import Hero from "@/components/hero";
 import Blogsection from "@/components/blogsection";
 import client from "@/lib/client";
+import { Metadata } from "next";
 
 
+export const metadata: Metadata = {
+    title: "Home - BestDJReviews",
+    description: "Welcome to My DJ Blog! Your go-to source for the latest news, reviews, tips, and trends in the DJ world. Stay updated with everything related to DJing.",
+    keywords: "DJ blog, DJ news, DJ reviews, DJ tips, DJ trends, DJing",
+    openGraph: {
+      title: "Home -BestDJReviews",
+      description: "Welcome to My DJ Blog! Your go-to source for the latest news, reviews, tips, and trends in the DJ world. Stay updated with everything related to DJing.",
+      type: "website",
+    }
+  };
+  
  export default async function Page() {
  
    

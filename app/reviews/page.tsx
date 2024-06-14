@@ -1,5 +1,24 @@
 import BlogItem from "@/components/blogitem"
 import client from "@/lib/client";
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+    title: "DJ Reviews - My DJ Blog",
+    description: "Read the latest reviews on DJ performances, events, and equipment. Stay updated with the DJ world.",
+    keywords: "DJ reviews, DJ performances, DJ equipment reviews, DJ events, DJ blog, Dj Tips, BestDjReviews Best DJ reviews, Best Dj tips, Tips as a DJ, DJ blog tips",
+    openGraph: {
+      title: "DJ Reviews - My DJ Blog",
+      description: "Read the latest reviews on DJ performances, events, and equipment. Stay updated with the DJ world.",
+      type: "website",
+      url: "https://www.yourdjblog.com/reviews",
+  
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@yourdjblog"
+    }
+  };
 
 export default async function Page(){
 

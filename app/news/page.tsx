@@ -1,5 +1,18 @@
 import BlogItem from "@/components/blogitem"
 import client from "@/lib/client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "DJ News - BestDJReviews",
+    description: "Stay updated with the latest news in the DJ world. From new music releases to event announcements and industry trends, we bring you all the important updates.",
+    keywords: "DJ news, DJ music releases, DJ events, DJ industry trends, DJ blog",
+    openGraph: {
+      title: "DJ News - BestDJReviews",
+      description: "Stay updated with the latest news in the DJ world. From new music releases to event announcements and industry trends, we bring you all the important updates.",
+      type: "website",
+    },
+  };
+
 
 export default async function Page(){
 
