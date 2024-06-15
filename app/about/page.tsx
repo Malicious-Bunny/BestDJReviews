@@ -72,10 +72,3 @@ export default function Page() {
     </div>
   );
 }
-
-export function Djtoolsbanner(){
-    return (
-        <>
-        </>
-    )
-}

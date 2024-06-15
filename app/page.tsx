@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
     //const res = await fetch(`https://cdn.contentful.com/spaces/yqf5x6omucvn/environments/master/entries?access_token=${env.CONTENTFUL_ACCESS_TOKEN}&content_type=post`,{ next: { revalidate: 3600 } })
 
-        const Data = await client.getEntries({content_type: 'post'})
+        const Data : any = await client.getEntries({content_type: 'post'})
 
        
 

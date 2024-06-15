@@ -24,7 +24,7 @@ export async function generateMetadata(
   const id = params.postid
  
   // fetch data
-  const Data = await client.getEntry(id);
+  const Data : any = await client.getEntry(id);
 
   const imgUrl = "https:" + (Data.fields.image?.fields?.file?.url || "");
  
@@ -59,9 +59,9 @@ export async function generateMetadata(
 export default async function Page({ params }: any) {
   //get the post id from the params and fetch the data for that particular post
   const { postid } = params;
-  const Data = await client.getEntry(postid);
+  const Data : any = await client.getEntry(postid);
 
-  const imgUrl = "https:" + (Data.fields.image?.fields?.file?.url || "");
+  const imgUrl  = "https:" + (Data.fields.image?.fields?.file?.url || "");
 
   return (
     <div className="w-screen flex flex-col content-center">
@@ -132,23 +132,4 @@ export default async function Page({ params }: any) {
 }
 export interface breadcrumProps {
   links: string[];
-}
-
-export function Linkcrumb(links: breadcrumProps) {
-  return (
-    <>
-      <Breadcrumb className="self-center text-xl">
-        <BreadcrumbList className=" text-[#FF7A00] text-lg xl:text-xl">
-          {links.links.map((link) => (
-            <BreadcrumbItem key={link}>
-              <BreadcrumbLink href={`/${link}`}>{link}</BreadcrumbLink>
-              {links.links.indexOf(link) === links.links.length - 1 ? null : (
-                <BreadcrumbSeparator />
-              )}
-            </BreadcrumbItem>
-          ))}
-        </BreadcrumbList>
-      </Breadcrumb>
-    </>
-  );
 }
