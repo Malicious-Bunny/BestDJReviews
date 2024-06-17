@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "Welcome to My DJ Blog! Your go-to source for the latest news, reviews, tips, and trends in the DJ world. Stay updated with everything related to DJing.",
     keywords: "DJ blog, DJ news, DJ reviews, DJ tips, DJ trends, DJing",
     openGraph: {
-      title: "Home -BestDJReviews",
+      title: "Home -BestDJGuides",
       description: "Welcome to My DJ Blog! Your go-to source for the latest news, reviews, tips, and trends in the DJ world. Stay updated with everything related to DJing.",
       type: "website",
     }
@@ -27,14 +27,14 @@ export const metadata: Metadata = {
        
 
        
-            const imgUrl = 'https:' + (Data.items[0].fields.image?.fields?.file?.url || '');
+        const imgUrl  ="https:" + (Data.items[0].fields.image?.fields?.file?.url || "");
             const ImgDes = (Data.items[0].fields.image?.fields?.description || '');
 
    
     return (
         <div className="w-screen flex flex-col content-center">
             
-            <main className="xl:w-[76%] p-4 w-full xl:my-12 flex-col flex gap-16  self-center">
+            <main className=" 2xl:w-[76%] p-4 w-full xl:my-12 flex-col flex gap-16  self-center">
                { <Hero title={Data.items[0].fields.title} date={Data.items[0].fields.date} description={Data.items[0].fields.description} image={imgUrl} tags={Data.items[0].fields.category} link={Data.items[0].sys.id} ImgDes={ImgDes}/> }
                 <Blogsection BlogsItems = {Data.items}/>
             </main>

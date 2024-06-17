@@ -5,9 +5,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "DJ Tips - BestDJReviews",
     description: "Discover essential tips and tricks for DJs. From mastering your equipment to perfecting your mixes, our tips will help you take your DJ skills to the next level.",
-    keywords: "DJ tips, DJ tricks, DJ techniques, mastering DJ equipment, DJ mixes, DJ blog",
+    keywords: "DJ tips, DJ tricks,DJ guides, BestDJGuides, bestdjguides, best dj guides, dj guides, DJ techniques, mastering DJ equipment, DJ mixes, DJ blog",
     openGraph: {
-      title: "DJ Tips - My DJ Blog",
+      title: "DJ Tips - BestDJGuides",
       description: "Discover essential tips and tricks for DJs. From mastering your equipment to perfecting your mixes, our tips will help you take your DJ skills to the next level.",
       type: "website",
     },

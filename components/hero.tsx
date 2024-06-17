@@ -12,7 +12,7 @@ export default async function Hero ({title, date, description, image, tags, link
 
     return (
         <section className="w-full xl:h-[60vh]  flex flex-col gap-6 xl:gap-8 xl:flex-row">
-            <Image className=" rounded-md" src={image} alt={ImgDes} width={800} height={800} />
+            <Image className=" rounded-md bg-cover" src={image} alt={ImgDes} width={800} height={800} />
             <HeroInfo Title={title} Dates={date} Description={description} Tags={tags} Links={link} />
         </section>
     )

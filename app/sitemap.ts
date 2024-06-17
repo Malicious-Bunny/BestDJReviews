@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
  
-const link : string = ''
+const link : string = 'https://www.bestdjguides.com'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {

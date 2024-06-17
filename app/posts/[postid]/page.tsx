@@ -34,7 +34,7 @@ export async function generateMetadata(
   return {
     title: String(Data.fields.title),
     description: String(Data.fields.description),
-    keywords: "DJ reviews, DJ performances, DJ equipment reviews, DJ events, DJ blog, Dj Tips, BestDjReviews Best DJ reviews, Best Dj tips, Tips as a DJ, DJ blog tips"+ Data.fields.title,
+    keywords: "DJ reviews,DJ tips, DJ tricks,DJ guides, BestDJGuides, bestdjguides, best dj guides, dj guides, DJ performances, DJ equipment reviews, DJ events, DJ blog, Dj Tips, BestDjReviews Best DJ reviews, Best Dj tips, Tips as a DJ, DJ blog tips"+ Data.fields.title,
     openGraph: {
       title: String(Data.fields.title),
       description: String(Data.fields.description),
@@ -80,8 +80,8 @@ export default async function Page({ params }: any) {
             height={1000}
             alt={""}
           />
-        <div className=" flex flex-row justify-between content-center">
-        <div className="flex flex-row gap-2">
+        <div className=" flex xl:flex-row flex-col xl:gap-0 gap-4 xl:justify-between justify-center content-center">
+        <div className="flex flex-row gap-1 xl:gap-2">
                 { Data.fields.category.map((tag:any) => (
                     <Badge key={tag} style={
                         {
@@ -98,9 +98,9 @@ export default async function Page({ params }: any) {
 
 
 
-            <div className="flex flex-row font-extrabold gap-4 self-start justify-center content-center">
+            <div className="flex flex-row self-end font-extrabold gap-2 xl:self-start justify-center content-center">
               <div className="date">
-                <p className="xl:text-lg text-md text-gray-400">
+                <p className="xl:text-lg text-sm text-gray-400">
                   {format(String(Data.fields.date), "MMMM dd, yyyy")}
                 </p>
               </div>
@@ -112,7 +112,7 @@ export default async function Page({ params }: any) {
                 />
               </div>
               <div className="category">
-                <p className="xl:text-lg text-md text-gray-400">
+                <p className="xl:text-lg text-sm text-gray-400">
                   {String(Data.fields.mainCategory)}
                 </p>
               </div>
