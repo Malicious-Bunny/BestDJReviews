@@ -21,9 +21,9 @@ export default function Header (){
     const [menuOpen, setMenuOpen] = useState(false);
     return (
         <header className=" bg-primary text-background max-w-full py-4 text-lg flex flex-row justify-between content-center">
-            <div className="logo xl:w-2/5 w-2/5 p-4  flex flex-row content-center justify-center text-white bg-black rounded-r-full">
-                <h1 className="self-center">Logo</h1>
-            </div>
+            <Link href={'/'} className="logo xl:w-2/5 w-2/5 p-4 lg:text-lg text-sm flex flex-row content-center justify-center text-white bg-black rounded-r-full">
+                <h1 className="self-center">BEST DJ GUIDES</h1>
+            </Link>
 
             <nav className="xl:flex hidden flex-row">
                 {Object.entries(linkList).map(([key, value]) => (
@@ -34,8 +34,8 @@ export default function Header (){
             </nav>
             {/* menu invisible on large screens and visible on mobile screens, shows up when you tap the menu icon*/}
             <div className={` ${menuOpen==false?"hidden":"flex"} flex-col gap-5 p-5 absolute top-[5.8rem] bg-[#FF7A00]  w-screen `}>
-                <Link href={'/'} className="flex text-center bg-black p-4 w-full rounded-md content-center justify-center">
-                        BESTDJGUIDES
+                <Link href={'/'} className="flex text-center bg-black text-sm p-4 w-full rounded-md content-center justify-center">
+                        BEST DJ GUIDES
                 </Link>
                 <div className="flex flex-col text-center bg-black  p-4 w-full rounded-md content-center justify-center">
                 {Object.entries(linkList).map(([key, value]) => (
