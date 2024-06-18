@@ -7,13 +7,30 @@ import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us - BestDJReviews",
+  title: "About Us - BestDJGuides",
   description: "Learn more about My DJ Blog, our journey, and our passion for the DJ world. Discover the people behind the blog and our mission to bring you the latest in DJ news and reviews.",
-  keywords: "About My DJ Blog, DJ blog team, DJ news, DJ reviews, our mission, DJ world",
+  keywords: [
+    "About the DJ",
+    "DJ Biography",
+    "Meet the DJ",
+    "DJ Background",
+    "DJ Experience",
+    "DJ Story",
+    "About Best DJ Guides",
+    "DJ Expertise",
+    "DJ Profile",
+    "DJ Introduction",
+    "BestDJGuides",
+    "bestdjguides.com",
+    "bestdjguides",
+    "best dj guides",
+    "best dj guides .com",
+  ],
   openGraph: {
-    title: "About Us - BestDJReviews",
+    title: "About Us - BestDJGuides",
     description: "Learn more about My DJ Blog, our journey, and our passion for the DJ world. Discover the people behind the blog and our mission to bring you the latest in DJ news and reviews.",
     type: "website",
+    url: "https://bestdjreviews.com/about",
   },
 }
 export default function Page() {

@@ -30,15 +30,19 @@ export async function generateMetadata(
  
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || []
- 
+  //splice the title plus full title to get the array of keywords
+  const keywords = Data.fields.title.split(" ").concat(Data.fields.title)
+  
   return {
     title: String(Data.fields.title),
     description: String(Data.fields.description),
-    keywords: "DJ reviews,DJ tips, DJ tricks,DJ guides, BestDJGuides, bestdjguides, best dj guides, dj guides, DJ performances, DJ equipment reviews, DJ events, DJ blog, Dj Tips, BestDjReviews Best DJ reviews, Best Dj tips, Tips as a DJ, DJ blog tips"+ Data.fields.title,
+    
+    keywords:keywords ,
     openGraph: {
       title: String(Data.fields.title),
       description: String(Data.fields.description),
       type: "website",
+      url: `https://bestdjguides.com/posts/${id}`,
       images: [
         {
           url: imgUrl,

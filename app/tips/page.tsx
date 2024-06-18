@@ -3,13 +3,30 @@ import client from "@/lib/client";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "DJ Tips - BestDJReviews",
+    title: "DJ Tips - BestDJGuides",
     description: "Discover essential tips and tricks for DJs. From mastering your equipment to perfecting your mixes, our tips will help you take your DJ skills to the next level.",
-    keywords: "DJ tips, DJ tricks,DJ guides, BestDJGuides, bestdjguides, best dj guides, dj guides, DJ techniques, mastering DJ equipment, DJ mixes, DJ blog",
+    keywords: [
+        "DJ Tips",
+        "DJ Techniques",
+        "Beginner DJ Tips",
+        "Advanced DJ Tips",
+        "DJ Mixing Tips",
+        "DJ Performance Tips",
+        "DJing Advice",
+        "DJ Pro Tips",
+        "How to DJ",
+        "DJ Setup Tips",
+        "BestDJGuides",
+        "bestdjguides.com",
+        "bestdjguides",
+        "best dj guides",
+        "best dj guides .com",
+      ],
     openGraph: {
       title: "DJ Tips - BestDJGuides",
       description: "Discover essential tips and tricks for DJs. From mastering your equipment to perfecting your mixes, our tips will help you take your DJ skills to the next level.",
       type: "website",
+      url: "https://bestdjguides.com/tips",
     },
      
   };

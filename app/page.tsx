@@ -5,13 +5,30 @@ import { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-    title: "Home - BestDJReviews",
+    title: "Home - BestDJGuides",
     description: "Welcome to My DJ Blog! Your go-to source for the latest news, reviews, tips, and trends in the DJ world. Stay updated with everything related to DJing.",
-    keywords: "DJ blog, DJ news, DJ reviews, DJ tips, DJ trends, DJing",
+    keywords: [
+        "Best DJ Guides",
+        "DJ Equipment",
+        "DJ Tutorials",
+        "DJ Blog",
+        "BestDJGuides",
+        "bestdjguides.com",
+        "bestdjguides",
+        "best dj guides",
+        "best dj guides .com",
+        "Top DJ Tips",
+        "DJ Gear Reviews",
+        "Latest DJ News",
+        "Best DJ Blog Posts",
+        "DJ Guide Homepage",
+        "DJ Resources"
+      ],
     openGraph: {
       title: "Home -BestDJGuides",
       description: "Welcome to My DJ Blog! Your go-to source for the latest news, reviews, tips, and trends in the DJ world. Stay updated with everything related to DJing.",
       type: "website",
+      url: "https://bestdjguides.com",
     }
   };
   

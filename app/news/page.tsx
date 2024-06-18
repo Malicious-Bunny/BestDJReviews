@@ -3,13 +3,30 @@ import client from "@/lib/client";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "DJ News - BestDJReviews",
+    title: "DJ News - BestDJGuides",
     description: "Stay updated with the latest news in the DJ world. From new music releases to event announcements and industry trends, we bring you all the important updates.",
-    keywords: "DJ tips, DJ tricks,DJ guides, BestDJGuides, bestdjguides, best dj guides, dj guides,,DJ news, DJ music releases, DJ events, DJ industry trends, DJ blog",
+    keywords: [
+        "DJ News",
+        "Latest DJ News",
+        "DJ Industry News",
+        "DJ Events",
+        "DJ Festival News",
+        "DJ Technology News",
+        "DJ Software Updates",
+        "DJ Hardware News",
+        "Breaking DJ News",
+        "DJ Community News",
+        "BestDJGuides",
+        "bestdjguides.com",
+        "bestdjguides",
+        "best dj guides",
+        "best dj guides .com",
+      ],
     openGraph: {
       title: "DJ News - BestDJReviews",
       description: "Stay updated with the latest news in the DJ world. From new music releases to event announcements and industry trends, we bring you all the important updates.",
       type: "website",
+      url: "https://bestdjreviews.com/news",
     },
   };
 

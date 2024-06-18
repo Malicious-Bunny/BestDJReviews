@@ -4,14 +4,30 @@ import { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-    title: "DJ Reviews - My DJ Blog",
+    title: "DJ Reviews - BestDJGuides",
     description: "Read the latest reviews on DJ performances, events, and equipment. Stay updated with the DJ world.",
-    keywords: "DJ reviews, DJ performances, DJ equipment reviews, DJ events, DJ blog, Dj Tips, BestDjReviews Best DJ reviews, Best Dj tips, Tips as a DJ, DJ blog tips",
+    keywords: [
+        "DJ Equipment Reviews",
+        "DJ Gear Reviews",
+        "Best DJ Controllers",
+        "DJ Headphones Reviews",
+        "DJ Mixer Reviews",
+        "DJ Turntable Reviews",
+        "Top DJ Software",
+        "DJ Lighting Reviews",
+        "DJ Speakers Reviews",
+        "Latest DJ Gear",
+        "BestDJGuides",
+        "bestdjguides.com",
+        "bestdjguides",
+        "best dj guides",
+        "best dj guides .com",
+      ],
     openGraph: {
-      title: "DJ Reviews - My DJ Blog",
+      title: "DJ Reviews - BestDJGuides",
       description: "Read the latest reviews on DJ performances, events, and equipment. Stay updated with the DJ world.",
       type: "website",
-      url: "https://www.yourdjblog.com/reviews",
+      url: "https://bestdjguides.com/reviews",
   
     },
     twitter: {
