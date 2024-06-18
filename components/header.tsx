@@ -34,9 +34,9 @@ export default function Header (){
             </nav>
             {/* menu invisible on large screens and visible on mobile screens, shows up when you tap the menu icon*/}
             <div className={` ${menuOpen==false?"hidden":"flex"} flex-col gap-5 p-5 absolute top-[5.8rem] bg-[#FF7A00]  w-screen `}>
-                <div className="flex text-center bg-black p-4 w-full rounded-md content-center justify-center">
-                        Logo
-                </div>
+                <Link href={'/'} className="flex text-center bg-black p-4 w-full rounded-md content-center justify-center">
+                        BESTDJGUIDES
+                </Link>
                 <div className="flex flex-col text-center bg-black  p-4 w-full rounded-md content-center justify-center">
                 {Object.entries(linkList).map(([key, value]) => (
                     <Link className="p-6 text-[#FF7A00] text-3xl hover:underline-offset-4 hover:underline" href={value} key={key}>
