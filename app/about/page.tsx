@@ -5,12 +5,15 @@ import { Badge } from "@/components/ui/badge";
 //import insta, facebook, twitter icons from react-icons
 import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 import { Metadata } from "next";
+import client from "@/lib/client";
 
 export const metadata: Metadata = {
   title: "About Us - BestDJGuides",
   description: "Learn more about My DJ Blog, our journey, and our passion for the DJ world. Discover the people behind the blog and our mission to bring you the latest in DJ news and reviews.",
   keywords: [
     "About the DJ",
+    "DJ Niorich",
+    "Davy Niorich",
     "DJ Biography",
     "Meet the DJ",
     "DJ Background",
@@ -33,7 +36,12 @@ export const metadata: Metadata = {
     url: "https://bestdjreviews.com/about",
   },
 }
-export default function Page() {
+export default async function Page() {
+
+  const Data : any = await client.getEntries({content_type: 'about'})
+  console.log(Data.items)
+
+ 
   return (
     <div className="w-screen p-4   flex flex-col content-center">
       <main className="xl:w-[76%] w-full my-8 flex-col flex gap-20  self-center">
@@ -55,9 +63,9 @@ export default function Page() {
                 <FaTwitter className="text-xl hover:cursor-pointer hover:text-[#FF7A00]" />
               </div>
           </div>
-            <div className="name">
-                <h2 className="xl:text-4xl text-2xl">Hi, I am John Doe</h2>
-                <h3 className="xl:text-2xl text-lg self-center ">Aka Dj tips</h3>
+            <div className="name space-y-3">
+                <h2 className="xl:text-3xl font-bold text-2xl">{Data.items[0].fields.name}</h2>
+                <h3 className="xl:text-xl italic text-lg self-center ">{"DJ-"+Data.items[0].fields.nickname}</h3>
           
             </div>
             <div className="roles flex flex-row content-center  gap-2">
@@ -68,20 +76,12 @@ export default function Page() {
 
           <p className="xl:text-md text-sm font-thin text-muted-foreground">
           {/*generate about section summary for a dj */}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Sed ut purus eget sapien luctus tincidunt. 
-            Nullam nec purus nec turpis bibendum ultricies. 
-            Nullam auctor, nunc id tincidunt varius, 
-            ligula mi fringilla nunc, id ultricies libero eros nec tortor. 
-            Donec sit amet nunc ac metus ultricies efficitur. 
-            Nullam nec purus nec turpis bibendum ultricies. 
-            Nullam auctor, nunc id tincidunt varius, 
-            ligula mi fringilla nunc, id ultricies libero eros nec tortor. 
-            Donec sit amet nunc ac metus ultricies efficitur.
+          {Data.items[0].fields.selfSummary}
           </p>
-          <div className="flex text-xl w-full flex-row gap-4">
-            <Button className=" text-xl">Get in touch</Button>
-          </div>
+         {/*get in touch form */}
+         <form action={`mailto:davyniorich@gmail,com`} method="get" encType="text/plain">
+                <Button type="submit">Get in Touch</Button>
+            </form>
         </div>
         
        </div>
