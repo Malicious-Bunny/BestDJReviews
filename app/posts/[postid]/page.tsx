@@ -1,29 +1,21 @@
 import Image from "next/image";
 import client from "@/lib/client";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
 import { Badge } from "@/components/ui/badge";
-import { FaCircle } from "react-icons/fa";
+import { FaCircle, FaFacebook, FaInstagram, FaTwitter, FaLink } from "react-icons/fa";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { format } from "date-fns";
 import type { Metadata, ResolvingMetadata } from 'next'
-
-
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import ShareArticle from "@/components/sharearticle";
+import Link from "next/link";
  
 export async function generateMetadata(
   { params, searchParams }: any,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
-  const id = params.postid
- 
   // fetch data
+  const id = params.postid;
   const Data : any = await client.getEntry(id);
 
   const imgUrl = "https:" + (Data.fields.image?.fields?.file?.url || "");
@@ -71,12 +63,10 @@ export default async function Page({ params }: any) {
     <div className="w-screen flex flex-col content-center">
      
       <main className="xl:w-[78%] p-1 xl:p-4 w-full  justify-center my-2 flex-col gap-8 flex xl:gap-12  self-center">
-        <div className="head flex flex-col self-center w-full content-center justify-center gap-6">
+        <div className="head flex flex-col self-center w-full content-center justify-center gap-10">
           
 
-          <h1 className="scroll-m-20 self-center xl:text-3xl text-3xl font-bold tracking-tight lg:text-5xl">
-            {String(Data.fields.title)}
-          </h1>
+          
           <Image
             className=" self-center"
             src={imgUrl}
@@ -84,6 +74,9 @@ export default async function Page({ params }: any) {
             height={1000}
             alt={""}
           />
+          <h1 className="scroll-m-20 self-center xl:text-3xl text-3xl font-bold tracking-tight lg:text-5xl">
+            {String(Data.fields.title)}
+          </h1>
         <div className=" flex xl:flex-row flex-col xl:gap-0 gap-4 xl:justify-between justify-center content-center">
         <div className="flex flex-row gap-1 xl:gap-2">
                 { Data.fields.category.map((tag:any) => (
@@ -100,7 +93,13 @@ export default async function Page({ params }: any) {
                 
                 
 
-
+            <Link href={'/about'} className="flex flex-row justify-center gap-2 content-center">
+              <Avatar className="self-center">
+              <AvatarImage src="https://github.com/shadcn.png" />
+              <AvatarFallback>DN</AvatarFallback>
+                        </Avatar>
+                <p className="self-center font-bold">DJ Niorich</p>
+            </Link>
 
             <div className="flex flex-row self-end font-extrabold gap-2 xl:self-start justify-center content-center">
               <div className="date">
@@ -127,8 +126,18 @@ export default async function Page({ params }: any) {
 
 
 
-        <div className="content">
-          {documentToReactComponents(Data.fields.post)}
+        <div className="flex  w-full flex-row justify-center gap-12">
+          <div className="share sticky flex-col justify-ceneter gap-5">
+          <h4 className="scroll-m-20 self-center text-lg text-nowrap text-[#FF7A00] tracking-tight">
+     Share article
+    </h4>
+                  <ShareArticle url={"https://www.bestdjguides.com/posts/"+postid} />
+            
+          </div>
+          <div className="content w-[80%]">
+          
+            {documentToReactComponents(Data.fields.post)}
+          </div>
         </div>
       </main>
     </div>

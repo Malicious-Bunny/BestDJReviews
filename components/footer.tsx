@@ -9,10 +9,6 @@ export default function Footer(){
             <div className=" flex xl:gap-0 gap-4 xl:flex-row flex-col self-center xl:w-2/4 justify-between content-center">
                 <div className="flex flex-row gap-1">
                     <p className="text-white">©2024 DJ News</p>
-                    <p className="text-white">|</p>
-                    <p className="text-white">Privacy</p>
-                    <p className="text-white">|</p>
-                    <p className="text-white">Terms</p>
                 </div>
                 <div className="flex self-center flex-row gap-4">
                    

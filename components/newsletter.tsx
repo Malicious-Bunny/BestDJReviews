@@ -1,9 +1,13 @@
+'use client'
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
+import { toast } from "sonner"
+import { useState } from "react";
+
 
 
 export default function Newsletter(){
-
+    const [email, setEmail] = useState<string>("")
     return (
         <section style={
             {
@@ -18,8 +22,23 @@ export default function Newsletter(){
                 <p className="text-sm self-center text-muted-foreground">Get frequent updates and coupons</p>
             </div>
             <div className="flex w-full justify-center content-center flex-col gap-4">
-                <Input className=" bg-white text-xl border" placeholder="Your e-mail" />
-                <Button className="font-bold  rounded-xl w-1/2 self-center p-5 text-lg text-white">Subscribe Now</Button>
+                <Input onChange={
+                    (e) => {
+                        setEmail(e.target.value)
+                    }
+                } value={email
+                } className=" bg-white text-xl border" placeholder="Your e-mail" />
+                <Button  onClick={() =>{
+        toast("DJ Niorich NewsLetter", {
+          description: "You have successfully subscribed to our newsletter",
+          action: {
+            label: "Undo",
+            onClick: () => console.log("Undo"),
+          },
+        })
+
+        setEmail("")
+      } }className="font-bold  rounded-xl w-1/2 self-center p-5 text-lg text-white">Subscribe Now</Button>
             </div>
             </div>
         </section>

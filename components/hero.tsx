@@ -8,7 +8,8 @@ import Link from "next/link"
 import { format } from "date-fns"
 
 export default async function Hero ({title, date, description, image, tags, link, ImgDes}:any){
-
+    //join post title with hyphens
+    const postTitle = title.split(" ").join("-");
 
     return (
         <section className="w-full xl:h-[60vh]  flex flex-col gap-6 xl:gap-8 xl:flex-row">

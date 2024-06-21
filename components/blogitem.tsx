@@ -7,6 +7,9 @@ import Link from "next/link";
 
 
 export default function BlogItem({title,date,image, desc, ImgDes,category,link, mainCat}:any){
+    //join post title with hyphens
+    const postTitle = title.split(" ").join("-");
+
     return (
         <Link href={`/posts/${link}`} className=" rounded-sm blogitem cursor-pointer p-2  flex flex-col gap-4">
         
